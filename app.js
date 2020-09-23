@@ -5,10 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var uri = process.env.MONGODB_URI;
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://localhost/employee')
-  .then(() =>  console.log('connection succesful'))
+mongoose.connect(uri, { useUnifiedTopology: true, useNewUrlParser: true })
+  .then(() =>  console.log('connection successful'))
   .catch((err) => console.error(err));
 
 var index = require('./routes/index');
