@@ -1,0 +1,10 @@
+runtime: nodejs12
+
+instance_class: F4_1G
+
+automatic_scaling:
+  max_instances: 4
+  min_instances: 3
+
+env_variables:
+  MONGODB_URI: "mongodb://Employer:dakjf87683rbjdvs98djh@run0-shard-00-00.gmggp.gcp.mongodb.net:27017,run0-shard-00-01.gmggp.gcp.mongodb.net:27017,run0-shard-00-02.gmggp.gcp.mongodb.net:27017/employer?ssl=true&replicaSet=atlas-5um5ea-shard-0&authSource=admin&retryWrites=true&w=majority"
